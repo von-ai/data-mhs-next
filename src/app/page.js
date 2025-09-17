@@ -1,4 +1,4 @@
-import Dasbor from './pages/Dasbor';
+import Dasbor from './pages/Dashboard';
 
 export default function Home() {
   return (
