@@ -1,9 +1,9 @@
-import Main from './pages/main';
+import Dasbor from './pages/Dasbor';
 
 export default function Home() {
   return (
     <>
-      <Main />
+      <Dasbor />
     </>
   );
 }
