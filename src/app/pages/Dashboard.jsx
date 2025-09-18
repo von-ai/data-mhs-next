@@ -5,15 +5,28 @@ import { use, useState } from 'react';
 import Button from '@/components/Button';
 
 const Dasbor = () => {
-  const [name, setName] = useState();
-  const [gpa, setGpa] = useState();
-  const [id, setId] = useState();
+  const [name, setName] = useState('');
+  const [gpa, setGpa] = useState('');
+  const [id, setId] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(name, id, gpa);
+  };
+
+  const handleReset = (e) => {
+    e.preventDefault();
+    setName('');
+    setGpa('');
+    setId('');
+  };
+
   return (
     <section className="flex w-full h-full justify-center pt-10 bg-[#F5F6FB]">
       <div className=" w-[80%] h-auto bg-white rounded-2xl flex justify-center">
         <div>
           <h1 className="font-bold text-5xl p-10">Student Data</h1>
-          <form className="py-3">
+          <form className="py-3" onSubmit={handleSubmit}>
             <TextField
               name="Name"
               type="text"
@@ -54,13 +67,14 @@ const Dasbor = () => {
               classname="p-3"
             />
             <div className="flex justify-center gap-4 pt-3">
-              <Button label="Reset" />
-              <Button label="Submit Your Data" />
+              <Button label="Reset" onClick={handleReset} />
+              <Button
+                label="Submit Your Data"
+                type="submit"
+                onClick={handleSubmit}
+              />
             </div>
           </form>
-          <div>{name}</div>
-          <div>{gpa}</div>
-          <div>{id}</div>
         </div>
       </div>
     </section>
