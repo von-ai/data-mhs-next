@@ -1,17 +1,19 @@
 'use strict';
 'use client';
 import TextField from '@/components/TextField';
-import { use, useState } from 'react';
+import { useState } from 'react';
 import Button from '@/components/Button';
 
 const Dasbor = () => {
   const [name, setName] = useState('');
   const [gpa, setGpa] = useState('');
   const [id, setId] = useState('');
+  const [submitted, setSubmitted] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(name, id, gpa);
+    setSubmitted({ name, id, gpa });
   };
 
   const handleReset = (e) => {
@@ -75,6 +77,16 @@ const Dasbor = () => {
               />
             </div>
           </form>
+          <div>Submitted Data</div>
+          <div>
+            {submitted && (
+              <div>
+                <div>{submitted.name}</div>
+                <div>{submitted.id}</div>
+                <div>{submitted.gpa}</div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </section>
