@@ -70,6 +70,7 @@ const Form = ({ onSubmit }) => {
             step={0.1}
             classname="p-3"
           />
+
           <div className="flex justify-center gap-4 pt-3">
             <Button label="Reset" onClick={handleReset} />
             <Button
