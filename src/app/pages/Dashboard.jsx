@@ -31,9 +31,6 @@ const Dashboard = () => {
                     <th className="px-4 py-2 border-b border-gray-300 text-left">
                       GPA
                     </th>
-                    <th className="px-4 py-2 border-b border-gray-300 text-left">
-                      Files
-                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -49,15 +46,15 @@ const Dashboard = () => {
                         {item.gpa}
                       </td>
                       <td className="px-4 py-2 border-b border-gray-200">
-                        {item.files && item.files.length > 0 ? (
-                          <ul>
-                            {item.files.map((file, fidx) => (
-                              <li key={fidx}>{file.name}</li>
-                            ))}
-                          </ul>
-                        ) : (
-                          <span>No files</span>
-                        )}
+                        {item.files &&
+                          item.files.length >
+                            0(
+                              <ul>
+                                {item.files.map((file, fidx) => (
+                                  <li key={fidx}>{file.name}</li>
+                                ))}
+                              </ul>
+                            )}
                       </td>
                     </tr>
                   ))}
