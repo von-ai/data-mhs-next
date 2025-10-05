@@ -60,6 +60,14 @@ const Dashboard = () => {
                   ))}
                 </tbody>
               </table>
+              <div className="text-center py-3">
+                <button
+                  className="px-5 py-2 bg-red-500 text-white rounded-sm"
+                  onClick={() => setSubmittedData([])}
+                >
+                  Delete
+                </button>
+              </div>
             </div>
           ) : (
             <div className="text-center">No data submitted</div>
